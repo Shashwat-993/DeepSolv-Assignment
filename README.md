@@ -1,6 +1,3 @@
-I'll create a comprehensive README.md for the Facebook Insights Microservice project.
-
-```markdown
 # Facebook Insights Microservice
 
 A robust microservice for scraping and analyzing Facebook pages, built with FastAPI, MongoDB, and Selenium. This service provides REST API endpoints for retrieving and analyzing Facebook page data, including posts, followers, and engagement metrics.
