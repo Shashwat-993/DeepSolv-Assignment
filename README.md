@@ -1,6 +1,9 @@
 # Facebook Insights Microservice
 
 A robust microservice for scraping and analyzing Facebook pages, built with FastAPI, MongoDB, and Selenium. This service provides REST API endpoints for retrieving and analyzing Facebook page data, including posts, followers, and engagement metrics.
+🌐 **Live Demo:** [https://facebook-insights.netlify.app](https://eloquent-cannoli-b7e5cc.netlify.app/)
+
+## 📋 Table of Contents
 
 ## 📋 Table of Contents
 - [Features](#features)
