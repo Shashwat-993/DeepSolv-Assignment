@@ -1,0 +1,117 @@
+{
+    "info": {
+        "name": "Facebook Insights Microservice",
+        "description": "API collection for Facebook Insights Microservice",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_postman_id": "fb-insights-microservice-2025",
+        "version": "1.1.0",
+        "_exporter_id": "Shashwat-993",
+        "updated_at": "2025-02-04T16:33:07Z"
+    },
+    "item": [
+        {
+            "name": "Page Information",
+            "item": [
+                {
+                    "name": "Get Page Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "X-API-Key",
+                                "value": "{{api_key}}",
+                                "type": "text"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{base_url}}/api/v1/page/:username",
+                            "host": ["{{base_url}}"],
+                            "path": ["api", "v1", "page", ":username"],
+                            "variable": [
+                                {
+                                    "key": "username",
+                                    "value": "facebook",
+                                    "description": "Facebook page username"
+                                }
+                            ]
+                        },
+                        "description": "Retrieve details for a specific Facebook page"
+                    },
+                    "response": [
+                        {
+                            "name": "Success Response",
+                            "originalRequest": {
+                                "method": "GET",
+                                "url": {
+                                    "raw": "{{base_url}}/api/v1/page/facebook"
+                                }
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "_postman_previewlanguage": "json",
+                            "body": {
+                                "id": "20531316728",
+                                "name": "Facebook",
+                                "username": "facebook",
+                                "category": "Social Media Platform",
+                                "follower_count": 167832564,
+                                "like_count": 165443897,
+                                "verified": true,
+                                "created_at": "2025-02-04T16:33:07Z"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "// Set timestamp for requests",
+                    "pm.variables.set('timestamp', new Date().toISOString());"
+                ]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [
+                    "// Global response tests",
+                    "pm.test('Response time is acceptable', function() {",
+                    "    pm.expect(pm.response.responseTime).to.be.below(1000);",
+                    "});",
+                    "",
+                    "pm.test('Status code is 200', function() {",
+                    "    pm.response.to.have.status(200);",
+                    "});",
+                    "",
+                    "pm.test('Response has JSON body', function() {",
+                    "    pm.response.to.be.json;",
+                    "});"
+                ]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "https://eloquent-cannoli-b7e5cc.netlify.app",
+            "type": "string"
+        },
+        {
+            "key": "api_key",
+            "value": "your-api-key-here",
+            "type": "string"
+        },
+        {
+            "key": "timestamp",
+            "value": "2025-02-04T16:33:07Z",
+            "type": "string"
+        }
+    ]
+}
